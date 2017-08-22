@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<style>
+header {
+	background-color: powderblue;
+    font-family: verdana;
+    font-size: 100%;
+    }
+p {
+	margin: 5px;
+	}
+form {
+	margin: 5px;
+	}
+</style>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+  
+  <header>
+  {% block head %}
+  <div align = center>
+  <h1>
+  U.S.A. SENATE HISTORICAL VOTES
+  </h1>
+  </div>
+  {% endblock %}
+  </header>
+  
+  {% block content %}
+	<form action="{{ url_for('index') }}" method="POST">
+    <input type="text" name="year">
+    <button type="Submit">Submit Year</button>
+    <p>Available years 1989 to 2017.</p>
+	</form>
+  {% endblock %}
+  
+  {% block body %}{% endblock %}
+    
+  {% block footer %} 
+  <div align=right> 
+  <h5 {text-align:left;}>
+  -- Created by Jorge Pinzon --
+  </h5>
+  </div>
+  {% endblock %}
+  
+</body>
+</html>
+
